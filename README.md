@@ -1,6 +1,9 @@
 # RTLRecyclerDotsIndicator
 An android library help you to create VirewPager decoration to your RecyclerView, it supports both LTR and RTL layouts, with customized active and inactive items decoration colors.
 
+![Alt demo](https://github.com/Ezaldeen99/RTLRecyclerDotsIndicator/blob/master/Screen_Recording_20201030-231109_1.gif)
+
+
 # Usage 
 
 you just need to add only one line of code to turn your recyclerView into a ViewPager
