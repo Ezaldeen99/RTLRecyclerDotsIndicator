@@ -1,3 +1,28 @@
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2017 Ezaldeen Sahb
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+
 package com.ezaldeen99.recyclerdotsdecortation;
 
 import android.content.res.Resources;
@@ -13,7 +38,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class CirclePagerIndicatorDecoration extends RecyclerView.ItemDecoration {
-    /**
+    /*
      * circle colors
      */
     private int colorActive = Color.parseColor("#5A5A5A");
@@ -21,33 +46,33 @@ public class CirclePagerIndicatorDecoration extends RecyclerView.ItemDecoration 
 
     private static final float DP = Resources.getSystem().getDisplayMetrics().density;
 
-    /**
+    /*
      * Height of the space the indicator takes up at the bottom of the view.
      */
     private final int mIndicatorHeight = (int) (DP * 36);
 
-    /**
+    /*
      * Indicator stroke width.
      */
     private final float mIndicatorStrokeWidth = DP * 4;
 
-    /**
+    /*
      * Indicator width.
      */
     private final float mIndicatorItemLength = DP * 4;
-    /**
+    /*
      * Padding between indicators.
      */
     private final float mIndicatorItemPadding = DP * 8;
 
-    /**
+    /*
      * Some more natural animation interpolation
      */
     private final Interpolator mInterpolator = new AccelerateDecelerateInterpolator();
 
     private final Paint mPaint = new Paint();
 
-    /**
+    /*
      * layout direction
      */
     int layoutDirection;
@@ -122,6 +147,7 @@ public class CirclePagerIndicatorDecoration extends RecyclerView.ItemDecoration 
         drawHighlights(c, indicatorStartX, indicatorPosY, activePosition, progress, layoutDirection);
     }
 
+//  took part of it from https://github.com/bleeding182/recyclerviewItemDecorations/blob/master/app/src/main/java/com/github/bleeding182/recyclerviewdecorations/viewpager/LinePagerIndicatorDecoration.java
     private void drawInactiveIndicators(Canvas c, float indicatorStartX, float indicatorPosY, int itemCount, int layoutDirection) {
         mPaint.setColor(colorInactive);
 
@@ -142,17 +168,17 @@ public class CirclePagerIndicatorDecoration extends RecyclerView.ItemDecoration 
         }
     }
 
+    //  took part of it from https://github.com/bleeding182/recyclerviewItemDecorations/blob/master/app/src/main/java/com/github/bleeding182/recyclerviewdecorations/viewpager/LinePagerIndicatorDecoration.java
     private void drawHighlights(Canvas c, float indicatorStartX, float indicatorPosY,
                                 int highlightPosition, float progress, int layoutDirection) {
         mPaint.setColor(colorActive);
         // width of item indicator including padding
         final float itemWidth = mIndicatorItemLength + mIndicatorItemPadding;
+        float highlightStart = calculateHighlightStart(indicatorStartX, itemWidth, highlightPosition, layoutDirection);
         if (progress == 0F) {
             // no swipe, draw a normal indicator
-            float highlightStart = calculateHighlightStart(indicatorStartX, itemWidth, highlightPosition, layoutDirection);
             c.drawCircle(highlightStart, indicatorPosY, mIndicatorItemLength / 2F, mPaint);
         } else {
-            float highlightStart = calculateHighlightStart(indicatorStartX, itemWidth, highlightPosition, layoutDirection);
             // calculate partial highlight
             float partialLength = mIndicatorItemLength * progress + mIndicatorItemPadding * progress;
 
