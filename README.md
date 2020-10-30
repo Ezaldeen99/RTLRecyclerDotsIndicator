@@ -16,3 +16,5 @@ and in case you want to change the items circle decoration color you can pass th
 # Installation 
 
 to add it to your project just add this to your dependencies in your app gradle file 
+
+`implementation 'com.ezaldeen99.recyclerdotsdecortation:recyclerdotsdecortation:0.0.4'`
