@@ -1,7 +1,7 @@
 # RTLRecyclerDotsIndicator
 An android library help you to create VirewPager decoration to your RecyclerView, it supports both LTR and RTL layouts, with customized active and inactive items decoration colors.
 
-#Usage 
+# Usage 
 
 you just need to add only one line of code to turn your recyclerView into a ViewPager
 
@@ -13,6 +13,6 @@ and in case you want to change the items circle decoration color you can pass th
 `CirclePagerIndicatorDecoration(int layoutDirection, int colorActive, int colorInactive)`
 
 
-#Installation 
+# Installation 
 
 to add it to your project just add this to your dependencies in your app gradle file 
