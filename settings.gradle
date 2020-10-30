@@ -1,0 +1,3 @@
+rootProject.name='RTLRecyclerDotsIndicator'
+include ':app'
+include ':recyclerdotsdecortation'
