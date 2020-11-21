@@ -24,6 +24,6 @@ CirclePagerIndicatorDecoration(int layoutDirection, int colorActive, int colorIn
 
 to add it to your project just add this to your dependencies in your app gradle file 
 
-```Groovy
+```gradle
 implementation 'com.ezaldeen99.recyclerdotsdecortation:recyclerdotsdecortation:0.0.4'
 ```
