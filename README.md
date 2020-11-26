@@ -27,3 +27,11 @@ to add it to your project just add this to your dependencies in your app gradle 
 ```gradle
 implementation 'com.ezaldeen99.recyclerdotsdecortation:recyclerdotsdecortation:0.0.4'
 ```
+and to your project level repos.
+
+```
+    maven {
+        url  "https://ezaldeen.bintray.com/Pager-RecyclerView-Decoration" 
+    }
+    
+```
